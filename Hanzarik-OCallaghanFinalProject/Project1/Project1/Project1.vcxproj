@@ -18,6 +18,21 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bookdata.cpp" />
+    <ClCompile Include="bookinfo.cpp" />
+    <ClCompile Include="cashier.cpp" />
+    <ClCompile Include="invmenu.cpp" />
+    <ClCompile Include="mainmenu.cpp" />
+    <ClCompile Include="report.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bookdata.h" />
+    <ClInclude Include="bookinfo.h" />
+    <ClInclude Include="cashier.h" />
+    <ClInclude Include="invmenu.h" />
+    <ClInclude Include="reports.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{8F92C53D-2389-405E-8747-73FC201C627D}</ProjectGuid>
@@ -114,21 +129,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\bookdata.cpp" />
-    <ClCompile Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\bookinfo.cpp" />
-    <ClCompile Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\cashier.cpp" />
-    <ClCompile Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\invmenu.cpp" />
-    <ClCompile Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\mainmenu.cpp" />
-    <ClCompile Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\report.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\bookdata.h" />
-    <ClInclude Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\bookinfo.h" />
-    <ClInclude Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\cashier.h" />
-    <ClInclude Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\invmenu.h" />
-    <ClInclude Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\reports.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

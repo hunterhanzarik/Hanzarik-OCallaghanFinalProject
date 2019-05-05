@@ -49,8 +49,8 @@ void invmenu(bookdata books[], int SIZE)
 			break;
 		}
 	} while (choice != 5);
-
 }
+
 void lookUpBook(bookdata books[], int SIZE) {
 	string search;
 	int index = 0;

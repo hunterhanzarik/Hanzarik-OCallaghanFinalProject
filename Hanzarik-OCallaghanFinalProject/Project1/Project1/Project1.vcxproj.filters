@@ -15,39 +15,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\bookdata.cpp">
+    <ClCompile Include="bookdata.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\bookinfo.cpp">
+    <ClCompile Include="bookinfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\cashier.cpp">
+    <ClCompile Include="cashier.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\invmenu.cpp">
+    <ClCompile Include="invmenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\mainmenu.cpp">
+    <ClCompile Include="mainmenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\report.cpp">
+    <ClCompile Include="report.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\bookdata.h">
+    <ClInclude Include="bookdata.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\bookinfo.h">
+    <ClInclude Include="bookinfo.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\cashier.h">
+    <ClInclude Include="cashier.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\invmenu.h">
+    <ClInclude Include="invmenu.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\CS122Project\CS122FinalProject\CS122FinalProject\reports.h">
+    <ClInclude Include="reports.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

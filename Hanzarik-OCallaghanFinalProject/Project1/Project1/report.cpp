@@ -1,8 +1,9 @@
 #include <iostream>
 #include <iomanip>
 #include "reports.h"
+#include "bookinfo.h"
 using namespace std;
-void reports()
+void reports(bookdata books[], int SIZE)
 {
 	int choice;
 	do {
@@ -27,22 +28,22 @@ void reports()
 		switch (choice)
 		{
 		case 1:
-			repListing();
+			repListing(books,SIZE);
 			break;
 		case 2:
-			repWholesale();
+			repWholesale(books, SIZE);
 			break;
 		case 3:
-			repRetail();
+			repRetail(books, SIZE);
 			break;
 		case 4:
-			repQty();
+			repQty(books, SIZE);
 			break;
 		case 5:
-			repCost();
+			repCost(books, SIZE);
 			break;
 		case 6:
-			repAge();
+			repAge(books, SIZE);
 			break;
 		default:
 			cout << "Back to Main Menu" << endl;
@@ -50,9 +51,49 @@ void reports()
 		}
 	} while (choice != 7);
 }
-void repListing() { cout << "no"; }
-void repWholesale() { cout << "no"; }
-void repRetail() { cout << "no"; }
-void repQty() { cout << "no"; }
-void repCost() { cout << "no"; }
-void repAge() { cout << "no"; }
+void repListing(bookdata books[], int SIZE)
+{
+	cout << setw(40) << "Full Listing" << endl;
+
+	for (int i = 0; i < SIZE; i++)
+	{
+		if (!books[i].isEmpty())
+		{
+			bookinfo(books[i]);
+		}
+		else
+		{
+			cout << "There is not book in spot " << i + 1 << endl;
+		}
+	}
+}
+void repWholesale(bookdata books[], int SIZE) 
+{
+	double totalWholesale = 0;
+	for (int i = 0; i < SIZE; i++)
+	{
+		cout << "ISBN: " << books[i].getIsbn() << endl;
+		cout << "Title: " << books[i].getTitle() << endl;
+		cout << "Quantity-On-Hand: " << books[i].getQty() << endl;
+		cout << "Wholesale Cost: " << books[i].getWholesale() << endl;
+		totalWholesale += (books[i].getQty() * books[i].getWholesale());
+	}
+
+	cout << "Total Wholesale Cost: " << totalWholesale << endl;
+}
+void repRetail(bookdata books[], int SIZE) 
+{ 
+	double totalRetail = 0;
+	for (int i = 0; i < SIZE; i++)
+	{
+		cout << "ISBN: " << books[i].getIsbn() << endl;
+		cout << "Title: " << books[i].getTitle() << endl;
+		cout << "Quantity-On-Hand: " << books[i].getQty() << endl;
+		cout << "Retail Price: " << books[i].getRetail() << endl;
+		totalRetail += (books[i].getQty() * books[i].getWholesale());
+	}
+	cout << "Total Retail Price: " << totalRetail << endl;
+}
+void repQty(bookdata books[], int SIZE) { cout << "no"; }
+void repCost(bookdata books[], int SIZE) { cout << "no"; }
+void repAge(bookdata books[], int SIZE) { cout << "no"; }
