@@ -25,6 +25,8 @@ void reports(bookdata books[], int SIZE)
 			cout << "Invalid Choice. Please pick a number from 1-7" << endl;
 			cin >> choice;
 		}
+
+		cin.ignore();
 		switch (choice)
 		{
 		case 1:
@@ -51,49 +53,211 @@ void reports(bookdata books[], int SIZE)
 		}
 	} while (choice != 7);
 }
+
 void repListing(bookdata books[], int SIZE)
 {
 	cout << setw(40) << "Full Listing" << endl;
 
 	for (int i = 0; i < SIZE; i++)
 	{
+
 		if (!books[i].isEmpty())
 		{
-			bookinfo(books[i]);
+			cout << "ISBN: " << books[i].getIsbn() << endl;
+			cout << "Title: " << books[i].getTitle() << endl;
+			cout << "Author: " << books[i].getAuthor() << endl;
+			cout << "Publisher: " << books[i].getPub() << endl;
+			cout << "Date Added: " << books[i].getDateAdded() << endl;
+			cout << "Quantity-On-Hand: " << books[i].getQty() << endl;
+			cout << "Wholesale Cost: " << books[i].getWholesale() << endl;
+			cout << "Retail Price: " << books[i].getRetail() << endl;
 		}
 		else
-		{
-			cout << "There is not book in spot " << i + 1 << endl;
-		}
+			cout << "There is not a book in spot " << i + 1 << endl;
 	}
 }
+
 void repWholesale(bookdata books[], int SIZE) 
 {
 	double totalWholesale = 0;
+	cout << setw(40) << "Wholesale Listing" << endl;
 	for (int i = 0; i < SIZE; i++)
 	{
-		cout << "ISBN: " << books[i].getIsbn() << endl;
-		cout << "Title: " << books[i].getTitle() << endl;
-		cout << "Quantity-On-Hand: " << books[i].getQty() << endl;
-		cout << "Wholesale Cost: " << books[i].getWholesale() << endl;
-		totalWholesale += (books[i].getQty() * books[i].getWholesale());
+		if (!books[i].isEmpty())
+		{
+			cout << "ISBN: " << books[i].getIsbn() << endl;
+			cout << "Title: " << books[i].getTitle() << endl;
+			cout << "Quantity-On-Hand: " << books[i].getQty() << endl;
+			cout << "Wholesale Cost: " << books[i].getWholesale() << endl;
+			totalWholesale += (books[i].getQty() * books[i].getWholesale());
+		}
+		else
+			cout << "There is not a book in spot " << i + 1 << endl;
 	}
-
 	cout << "Total Wholesale Cost: " << totalWholesale << endl;
 }
+
 void repRetail(bookdata books[], int SIZE) 
 { 
 	double totalRetail = 0;
+	cout << setw(40) << "Retail Listing" << endl;
 	for (int i = 0; i < SIZE; i++)
 	{
+		if (!books[i].isEmpty())
+		{
+			cout << "ISBN: " << books[i].getIsbn() << endl;
+			cout << "Title: " << books[i].getTitle() << endl;
+			cout << "Quantity-On-Hand: " << books[i].getQty() << endl;
+			cout << "Retail Price: " << books[i].getRetail() << endl;
+			totalRetail += (books[i].getQty() * books[i].getRetail());
+		}
+		else
+		{
+			cout << "There is not a book in spot " << i + 1 << endl;
+		}
+	}
+	cout << "Total Retail Price: " << totalRetail << endl;
+}
+
+void repQty(bookdata books[], int SIZE) 
+{
+	bool swap;
+	bookdata temp;
+	int bottom = SIZE - 1;   
+								
+	do
+	{
+		swap = false;
+		for (int count = 0; count < bottom; count++)
+		{
+			if (books[count].getQty() < books[count + 1].getQty())
+			{	     
+				temp = books[count];
+				books[count] = books[count + 1];
+				books[count + 1] = temp;
+				swap = true; 
+			}
+		}
+		bottom--;  
+
+	} while (swap != false); //Sort
+
+	cout << setw(40) << "Quantity Listing" << endl;
+	for (int i = 0; i < SIZE; i++) 
+	{
+		if (!books[i].isEmpty())
+		{
+			cout << "ISBN: " << books[i].getIsbn() << endl;
+			cout << "Title: " << books[i].getTitle() << endl;
+			cout << "Quantity-On-Hand: " << books[i].getQty() << endl;
+		}
+		else
+		{
+			cout << "There is not a book in spot " << i + 1 << endl;
+		}
+	}
+}
+
+void repCost(bookdata books[], int SIZE) 
+{
+	bool swap;
+	bookdata temp;
+	int bottom = SIZE - 1;    
+
+	do
+	{
+		swap = false;
+		for (int count = 0; count < bottom; count++)
+		{
+			if (books[count].getWholesale() < books[count + 1].getWholesale())
+			{	           
+				temp = books[count];
+				books[count] = books[count + 1];
+				books[count + 1] = temp;
+				swap = true;
+			}
+		}
+		bottom--;
+
+	} while (swap != false); //Sort
+	
+	cout << setw(40) << "Wholesale Listing" << endl;
+	for (int i = 0; i < SIZE; i++)
+	{
+		if (!books[i].isEmpty())
+		{
 		cout << "ISBN: " << books[i].getIsbn() << endl;
 		cout << "Title: " << books[i].getTitle() << endl;
 		cout << "Quantity-On-Hand: " << books[i].getQty() << endl;
 		cout << "Retail Price: " << books[i].getRetail() << endl;
-		totalRetail += (books[i].getQty() * books[i].getWholesale());
+		}
+		else
+		{
+			cout << "There is not a book in spot " << i + 1 << endl;
+		}
 	}
-	cout << "Total Retail Price: " << totalRetail << endl;
 }
-void repQty(bookdata books[], int SIZE) { cout << "no"; }
-void repCost(bookdata books[], int SIZE) { cout << "no"; }
-void repAge(bookdata books[], int SIZE) { cout << "no"; }
+
+void repAge(bookdata books[], int SIZE)
+{ 
+	bool swap;
+	bookdata temp;
+	int y1, y2, m1, m2, d1, d2, bottom = SIZE - 1;
+
+	do
+	{
+		swap = false;
+		for (int count = 0; count < bottom; count++)
+		{
+			if (books[count].getDateAdded().compare("") != 0 && books[count+1].getDateAdded().compare("") != 0)
+			{
+				y1 = stoi(books[count].getDateAdded().substr(6, 4));
+				y2 = stoi(books[count + 1].getDateAdded().substr(6, 4));
+				m1 = stoi(books[count].getDateAdded().substr(0, 2));
+				m2 = stoi(books[count + 1].getDateAdded().substr(0, 2));
+				d1 = stoi(books[count].getDateAdded().substr(3, 2));
+				d2 = stoi(books[count + 1].getDateAdded().substr(3, 2));
+
+				if (y1 < y2)
+				{
+					temp = books[count];
+					books[count] = books[count + 1];
+					books[count + 1] = temp;
+					swap = true;
+				}
+
+				else if (y1 == y2 && m1 < m2)
+				{
+					temp = books[count];
+					books[count] = books[count + 1];
+					books[count + 1] = temp;
+					swap = true;
+				}
+
+				else if (y1 == y2 && m1 == m2 && d1 < d2)
+				{
+					temp = books[count];
+					books[count] = books[count + 1];
+					books[count + 1] = temp;
+					swap = true;
+				}
+			}
+		}
+		bottom--;
+
+	} while (swap != false); //Sort
+
+	cout << setw(40) << "Date Listing" << endl;
+	for (int i = 0; i < SIZE; i++)
+	{
+		if(!books[i].isEmpty())
+		{
+		cout << "ISBN: " << books[i].getIsbn() << endl;
+		cout << "Title: " << books[i].getTitle() << endl;
+		cout << "Quantity-On-Hand: " << books[i].getQty() << endl;
+		cout << "Date Added: " << books[i].getDateAdded() << endl;
+		}
+		else
+			cout << "There is not a book in spot " << i + 1 << endl;
+	}
+}

@@ -1,3 +1,6 @@
+//Serendipity Booksellers
+//Hunter Hanzarik & Chris O'Callaghan
+
 #include <iostream>
 #include <iomanip>
 #include "bookinfo.h"
@@ -32,7 +35,6 @@ int main()
 		while (choice < 1 || choice > 4) {
 			cout << "Invalid Choice. Please pick a number from 1-4" << endl;
 			cin >> choice;
-			cin.ignore();
 		}
 		cin.ignore();
 		switch (choice) {
@@ -43,7 +45,7 @@ int main()
 			invmenu(books, NUM);
 			break;
 		case 3:
-			reports();
+			reports(books,NUM);
 			break;
 		default:
 			cout << "Goodbye" << endl;

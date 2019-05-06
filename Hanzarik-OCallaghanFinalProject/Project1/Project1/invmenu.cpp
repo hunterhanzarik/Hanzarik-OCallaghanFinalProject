@@ -316,7 +316,6 @@ void deleteBook(bookdata books[], int SIZE){
 
 	
 	cout << "Enter the book that you would like to remove." << endl;
-	cin.ignore();
 	getline(cin, search);
 	bookNum = findBook(books,SIZE,search);
 	if (bookNum > -1)

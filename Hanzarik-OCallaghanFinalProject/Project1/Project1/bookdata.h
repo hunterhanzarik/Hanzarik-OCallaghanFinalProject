@@ -15,6 +15,7 @@ private:
 public:
 	// Constructor(s)
 	bookdata();
+	// Destructor
 	~bookdata();
 
 	// Setters/Mutators

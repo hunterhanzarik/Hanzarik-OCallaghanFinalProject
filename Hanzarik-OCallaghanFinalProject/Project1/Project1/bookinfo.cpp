@@ -17,5 +17,4 @@ void bookinfo(bookdata book)
 	cout << "Quantity-On-Hand: " << book.getQty() << endl;
 	cout << "Wholesale Cost: " << book.getWholesale() << endl;
 	cout << "Retail Price: " << book.getRetail() << endl;
-
 }
